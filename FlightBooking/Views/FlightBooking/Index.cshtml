@@ -1,0 +1,40 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Immediate notifications from SQL Server using SignalR, KnockoutJS and SqlTableDependencly</h3>
+    </div>
+    <div class="panel-body">
+        Please change any data in FlightBookings table (INSERT/UPDATE/DELETE) to get an immediate feedback.
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead style="background-color: silver">
+        <tr>
+            <th>Flight Id</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Seats Availability</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: flights">
+        <tr>
+            <td>
+                <span data-bind="text: $data.flightId"></span>
+            </td>
+            <td>
+                <span data-bind="text: $data.from"></span>
+            </td>
+            <td>
+                <span data-bind="text: $data.to"></span>
+            </td>
+            <td>
+                <span data-bind="text: $data.freeSeats"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@section Scripts {    
+    <script src="~/Scripts/flightBookingViewModels.js"></script>
+    <script src="~/Scripts/flightBookingTicker.js"></script>
+}
