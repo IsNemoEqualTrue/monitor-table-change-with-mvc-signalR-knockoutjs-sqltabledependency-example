@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
 using FlightBooking.Models;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
@@ -36,6 +38,8 @@ namespace FlightBooking
             // Because our C# model name differs from table name we have to specify database table name.
             this.SqlTableDependency = new SqlTableDependency<FlightAvailability>(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString, "FlightBookings", mapper);
             this.SqlTableDependency.OnChanged += this.TableDependency_OnChanged;
+            this.SqlTableDependency.TraceLevel = TraceLevel.Verbose;
+            this.SqlTableDependency.TraceListener = new TextWriterTraceListener(File.Create("c:\\Temp\\output.txt"));
             this.SqlTableDependency.Start();
         }
 
