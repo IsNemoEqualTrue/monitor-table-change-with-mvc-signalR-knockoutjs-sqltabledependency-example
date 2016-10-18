@@ -128,12 +128,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="TableDependency, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SqlTableDependency.4.6.0.0\lib\TableDependency.dll</HintPath>
+    <Reference Include="TableDependency, Version=4.6.3.1, Culture=neutral, PublicKeyToken=997305cc1a8bb802, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.4.6.4.0\lib\TableDependency.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="TableDependency.SqlClient, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SqlTableDependency.4.6.0.0\lib\TableDependency.SqlClient.dll</HintPath>
+    <Reference Include="TableDependency.SqlClient, Version=4.6.4.0, Culture=neutral, PublicKeyToken=c3b0a3ab9ceb00ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.4.6.4.0\lib\TableDependency.SqlClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
