@@ -190,5 +190,3 @@ D:\Projects\FlightBooking\FlightBooking\bin\System.Web.WebPages.Razor.xml
 D:\Projects\FlightBooking\FlightBooking\obj\Debug\FlightBooking.csprojResolveAssemblyReference.cache
 D:\Projects\FlightBooking\FlightBooking\obj\Debug\FlightBooking.dll
 D:\Projects\FlightBooking\FlightBooking\obj\Debug\FlightBooking.pdb
-D:\Projects\FlightBooking\FlightBooking\bin\TableDependency.pdb
-D:\Projects\FlightBooking\FlightBooking\bin\TableDependency.SqlClient.pdb

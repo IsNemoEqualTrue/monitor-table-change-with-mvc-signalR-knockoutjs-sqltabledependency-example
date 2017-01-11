@@ -199,6 +199,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FlightAvailability.cs" />
+    <Compile Include="Models\FlightBook.cs" />
     <Compile Include="Models\FlightsAvailability.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

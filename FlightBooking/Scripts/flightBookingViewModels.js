@@ -51,5 +51,33 @@ function FlightsBookingViewModel(flights) {
         });
     };
 
+    self.flightId = ko.observable(null);
+    self.seats = ko.observable(null);
+
+    self.book = function ()
+    {
+        var dataToPostSerialized = JSON.stringify({ Id : self.flightId(), Seats : self.seats() });
+
+        $.ajax({
+            type: 'POST',
+            cache: false,
+            dataType: 'json',
+            url: '/FlightBooking/Book',
+            data: dataToPostSerialized,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) 
+            {
+                
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown)
+            {
+                alert("Error");
+            }
+        });
+
+        self.flightId(null);
+        self.seats(null);
+    };
+
     ko.mapping.fromJS(flights, flightsBookingMappingOptions, self);
 };
