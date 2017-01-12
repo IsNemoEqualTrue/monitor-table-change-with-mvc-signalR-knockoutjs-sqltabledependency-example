@@ -1,6 +1,5 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
-using System.Net;
 using System.Web.Mvc;
 using FlightBooking.Models;
 
@@ -27,7 +26,7 @@ namespace FlightBooking.Controllers
                 }
             }
 
-            return this.Json($"Booked {viewModel.Seats} seat(s)");
+            return this.Json(new { FlightId = viewModel.Id, Message = $"Booked {viewModel.Seats} seat(s) for Flight number {viewModel.Id}." });
         }
     }
 }

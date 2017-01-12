@@ -2,17 +2,17 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-xs-12">
-            <h2>Immediate notifications on SQL Server record table changes using SignalR, KnockoutJS and SqlTableDependency</h2>         
+            <h2>Immediate notifications on SQL Server record table changes using SignalR, KnockoutJS and SqlTableDependency</h2>
         </div>
         <div class="col-xs-12">
-            <table class="table table-striped">
+            <table ID="flightsTable" class="table table-striped">
                 <thead style="background-color: silver">
-                    <tr>
-                        <th>Flight Id</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Seats Availability</th>
-                    </tr>
+                <tr>
+                    <th>Flight Id</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Seats Availability</th>
+                </tr>
                 </thead>
                 <tbody data-bind="foreach: flights">
                     <tr>
@@ -25,39 +25,42 @@
                         <td>
                             <span data-bind="text: $data.to"></span>
                         </td>
-                        <td>
+                        <td data-bind="attr: { 'id': $data.flightId }">
                             <span data-bind="text: $data.freeSeats"></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <hr/>
         <div class="col-xs-12">
-            <br/>
-            <h2>Book Flight</h2>
-            <form>
-                <div class="form-group">
-                    <label for="flightId">FlightId</label>
-                    <input type="text" value="" data-bind="value:flightId" class="form-control" id="flightId">
+           
+            <div class="panel panel-primary">
+                <div class="panel-heading">Book Flight</div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="flightId">FlightId</label>
+                            <input type="text" value="" data-bind="value: flightId" class="form-control" id="flightId">
+                        </div>
+                        <div class="form-group">
+                            <label for="seats">Number of seats to book</label>
+                            <input type="text" class="form-control" id="seats" data-bind="value: seats">
+                        </div>
+                        <button type="button" class="btn btn-default" data-bind="click: book">Submit</button>
+                    </form> 
                 </div>
-                <div class="form-group">
-                    <label for="seats">Password</label>
-                    <input type="text" class="form-control" id="seats" data-bind="value:seats">
+                <div class="panel-footer">
+                    <label data-bind="text: result"></label>
                 </div>
-                <button type="button" class="btn btn-default" data-bind="click:book">Submit</button>
-            </form>
+            </div>                       
         </div>
     </div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; 2016 Company, Inc.</p>
-    </footer>
 </div> <!-- /container -->
 
 
-@section Scripts {    
+@section Scripts {
+    <script src="~/Scripts/jquery.UI-1.10.js"></script>
     <script src="~/Scripts/flightBookingViewModels.js"></script>
     <script src="~/Scripts/flightBookingTicker.js"></script>
 }

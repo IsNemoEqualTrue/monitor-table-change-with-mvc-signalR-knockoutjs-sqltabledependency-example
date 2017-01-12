@@ -53,30 +53,27 @@ function FlightsBookingViewModel(flights) {
 
     self.flightId = ko.observable(null);
     self.seats = ko.observable(null);
+    self.result = ko.observable(null);
 
     self.book = function ()
     {
-        var dataToPostSerialized = JSON.stringify({ Id : self.flightId(), Seats : self.seats() });
-
         $.ajax({
-            type: 'POST',
-            cache: false,
-            dataType: 'json',
-            url: '/FlightBooking/Book',
-            data: dataToPostSerialized,
-            contentType: 'application/json; charset=utf-8',
+            type: "POST",
+            url: "/FlightBooking/Book",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ Id: self.flightId(), Seats: self.seats() }),
+            dataType: "json",
             success: function (data) 
             {
-                
+                self.result(data.Message);
+                self.flightId(null);
+                self.seats(null);                
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown)
+            error: function (xmlHttpRequest, textStatus, errorThrown)
             {
-                alert("Error");
+                self.result(errorThrown);
             }
         });
-
-        self.flightId(null);
-        self.seats(null);
     };
 
     ko.mapping.fromJS(flights, flightsBookingMappingOptions, self);

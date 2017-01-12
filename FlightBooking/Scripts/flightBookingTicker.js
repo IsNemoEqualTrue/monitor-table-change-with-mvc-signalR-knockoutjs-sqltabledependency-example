@@ -13,6 +13,8 @@ $(function () {
     // Add a client-side hub method that the server will call
     ticker.client.updateFlightAvailability = function (flight) {
         viewModel.updateFlightAvailability(flight);
+
+        $("#" + flight.flightId).effect("highlight", { color: "yellow" }, 2000);
     };
 
     ticker.client.addFlightAvailability = function (flight) {
