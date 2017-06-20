@@ -1,2 +1,6 @@
-# Monitor record table change with MVC, SignalR and Knockout JS
-Audit SQL Server table change by detect insert update delete and receive notifications with C#
+# Audit SQL Server table change by detect insert update delete and receive notifications
+
+![alt text][shema]
+
+[shema]: https://github.com/christiandelbianco/Monitor-table-change-with-WPF-WCF-sqltabledependency/blob/master/Schema-min.png "Notifications"
+
